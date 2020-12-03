@@ -128,6 +128,9 @@ class HealthFactory {
 
     try {
       List fetchedDataPoints = await _channel.invokeMethod('getData', args);
+      if (fetchedDataPoints == null)
+        return null;
+        
       healthData = fetchedDataPoints.map((e) {
         num value = e["value"];
         DateTime from = DateTime.fromMillisecondsSinceEpoch(e["date_from"]);

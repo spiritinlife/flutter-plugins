@@ -214,6 +214,7 @@ class HealthPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
                 }
 
             } catch (e3: Exception) {
+                Log.e("FLUTTER_HEALTH::ERROR", e3.toString())
                 Handler(Looper.getMainLooper()).post {
                     result.success(null)
                 }
